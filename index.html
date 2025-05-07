@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>نظام التقييم التفاعلي</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+  </head>
+  <body>
+    <div class="container">
+     
+
+      <div class="card">
+        <h2>جدول المؤشرات</h2>
+        <table id="financeTable">
+          <thead>
+            <tr>
+              <th>المؤشر</th>
+              <th>القيمة</th>
+              <th>التحكم</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="indicator-name">توزيع عبء التمويل</td>
+              <td><span id="col0" class="value-display">0</span></td>
+              <td>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(0, 1)"
+                >
+                  +
+                </button>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(0, -1)"
+                >
+                  -
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="indicator-name">حجم التمويل الكلي</td>
+              <td><span id="col1" class="value-display">0</span></td>
+              <td>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(1, 1)"
+                >
+                  +
+                </button>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(1, -1)"
+                >
+                  -
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="indicator-name">فعالية التمويل على المناخ</td>
+              <td><span id="col2" class="value-display">0</span></td>
+              <td>
+                <button
+                
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(2, 1)"
+                >
+                  +
+                </button>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(2, -1)"
+                >
+                  -
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="indicator-name">شكل التمويل</td>
+              <td><span id="col3" class="value-display">0</span></td>
+              <td>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(3, 1)"
+                >
+                  +
+                </button>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(3, -1)"
+                >
+                  -
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="indicator-name">عدالة شروط التمويل</td>
+              <td><span id="col4" class="value-display">0</span></td>
+              <td>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(4, 1)"
+                >
+                  +
+                </button>
+                <button
+                  class="btn btn-primary btn-sm"
+                  onclick="changeValue(4, -1)"
+                >
+                  -
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="actions">
+          <button class="btn btn-danger" onclick="resetValues()">
+            إعادة تعيين جميع القيم
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>الرسم البياني التفاعلي</h2>
+        <div class="chart-container">
+          <canvas id="chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+   <script src="script.js"></script>
+  </body>
+</html>
